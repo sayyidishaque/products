@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+         <div class="col-md-4">
+              <div class="card text-white bg-info mb-3" style="max-width: 30rem; height:29rem">
+                  <div class="card-body"><h5 class="card-title">Add Products</h5></div>
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="card bg-info">
+                    <div class="card-body">
+                        <label><input type="radio" name="group" value="fruits">Fruits</label>
+                        <label><input type="radio" name="group" value="vegetables">Vegetables</label>
+                        <label><input type="radio" name="group" value="kidsitem">Kids Items</label>
+<!--                    <input type="text" name="group" placeholder="Enter Product Category">-->
+                    </div></div>
+
+                    <div class="card bg-info">
+                    <div class="card-body">
+                    <input type="text" name="name" placeholder="Enter Product Name">
+                    </div></div>
+
+                    <div class="card bg-info">
+                    <div class="card-body">
+                    <input type="text" name="disc" placeholder="Enter Product Description"><br>
+                    </div></div>
+
+                    <div class="card bg-info">
+                    <div class="card-body">
+                    <input type="text" name="rate" placeholder="Enter Product Rate"><br>
+                    </div></div>
+
+                    <input type="file" name="image">
+                    <input type="submit">
+                </form>
+                  <br>
+              </div>
+             {% if i in messages %}
+            {{ i }}
+            {% endif %}
+         </div>
+    </div>
+</div>
+{% endblock %}

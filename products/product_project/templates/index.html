@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for i in fruits %}<br>
+        <div class="col-md-3">
+
+             <div class="card text-white bg-dark mb-3" style="max-width: 18rem; height:18rem">
+              <div class="card-header">Fruits</div>
+              <div class="card-body">
+                <a href="fruits/{{i.id}}"> <h5 class="card-title">{{i.name}}</h5>
+                  <img src="{{i.pic.url}}" width="150px height=150px"></a>
+<!--                <p class="card-text">{{i.disc}}<br>Rate per KG= {{i.rate}}</p>-->
+              </div>
+            </div>
+         </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--<br>-->
+<div class="container">
+    <div class="row">
+        {% for i in veg %}<br>
+        <div class="col-md-3">
+
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem; height:18rem">
+              <div class="card-header">Vegetables</div>
+              <div class="card-body">
+                  <a href="vegetables/{{i.id}}"><h5 class="card-title">{{i.name}}</h5>
+                  <img src="{{i.pic.url}}" width="100px height=100px"></a>
+<!--                <p class="card-text">{{i.disc}}<br>Rate per KG= {{i.rate}}</p>-->
+              </div>
+            </div>
+         </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--<br>-->
+<div class="container">
+    <div class="row">
+        {% for i in kid %}<br>
+        <div class="col-md-3">
+
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem; height:18rem">
+              <div class="card-header">Kids Items</div>
+              <div class="card-body">
+                <a href="kidsitem/{{i.id}}"><h5 class="card-title">{{i.name}}</h5>
+                  <img src="{{i.pic.url}}" width="100px height=100px"></a>
+<!--                <p class="card-text">{{i.disc}}<br>Rate per Piece = {{i.rate}}</p>-->
+              </div>
+            </div>
+         </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
